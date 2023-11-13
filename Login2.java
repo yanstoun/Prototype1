@@ -9,7 +9,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+
 public class Login2 extends Application {
+	private static final String username1 = "user";
+	private static final String password1 = "pass";
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -35,6 +38,7 @@ public class Login2 extends Application {
 		GridPane.setConstraints(password, 0, 1);
 		gridPane.getChildren().add(password);
 		
+		
 		//add Login button
 		Button loginButton = new Button("Login");
 		GridPane.setConstraints(loginButton,  1, 0);
@@ -46,9 +50,16 @@ public class Login2 extends Application {
 		gridPane.getChildren().add(action);
 		
 		loginButton.setOnAction(event -> {
-			Dashboard1 dashboard = new Dashboard1();
-			dashboard.start(new Stage());
-			primaryStage.close();
+			String usernameInput = username.getText();
+			String passwordInput = password.getText();
+			
+			if (usernameInput.equals(username1) && passwordInput.equals(password1)) {
+				Dashboard1 dashboard = new Dashboard1();
+				dashboard.start(new Stage());
+				primaryStage.close();
+			}
+			
+			
 			
 		});
 		
