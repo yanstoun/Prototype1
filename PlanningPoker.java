@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.TextArea;
 
+
 public class PlanningPoker extends Application {
 
     public static void main(String[] args) {
@@ -43,11 +44,17 @@ public class PlanningPoker extends Application {
             // Display the input values
             logBox.appendText("Task: " + task + "     Name: " + name + "     Difficulty: " + number + "\n");
         });
+        Button backButton = new Button("Back");
+        backButton.setOnAction(e ->{
+        	primaryStage.close();
+        	Dashboard1 dashboard = new Dashboard1();
+        	dashboard.start(new Stage());
+        });
 
         // Create layout
         VBox layout = new VBox(10);
         layout.setPadding(new Insets(10, 10, 10, 10));
-        layout.getChildren().addAll(taskLabel, taskField, nameLabel, nameField, numberLabel, numberField, submitButton, new ScrollPane(logBox));
+        layout.getChildren().addAll(taskLabel, taskField, nameLabel, nameField, numberLabel, numberField, submitButton, backButton, new ScrollPane(logBox));
 
         // Set up the scene
         Scene scene = new Scene(layout, 500, 400);
