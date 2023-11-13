@@ -2,6 +2,7 @@ package EffortLogger;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -57,6 +58,13 @@ public class Login2 extends Application {
 				Dashboard1 dashboard = new Dashboard1();
 				dashboard.start(new Stage());
 				primaryStage.close();
+			}
+			else {
+				Alert alert = new Alert(Alert.AlertType.ERROR);
+		        alert.setTitle("Incorrect Credentials");
+		        alert.setHeaderText(null);
+		        alert.setContentText("The username or password is incorrect. Please try again.");
+		        alert.showAndWait();
 			}
 			
 			
