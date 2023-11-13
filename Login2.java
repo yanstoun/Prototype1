@@ -61,10 +61,10 @@ public class Login2 extends Application {
 			}
 			else {
 				Alert alert = new Alert(Alert.AlertType.ERROR);
-		        alert.setTitle("Incorrect Credentials");
-		        alert.setHeaderText(null);
-		        alert.setContentText("The username or password is incorrect. Please try again.");
-		        alert.showAndWait();
+		        	alert.setTitle("Incorrect Credentials");
+		       		alert.setHeaderText(null);
+		        	alert.setContentText("The username or password is incorrect. Please try again.");
+		        	alert.showAndWait();
 			}
 			
 			
