@@ -40,11 +40,24 @@ public class Dashboard1 extends Application {
         Button btn4 = createButton("Report a Problem");
         root.getChildren().add(btn4);
         
-        Button btn5 = createButton("Planning Poker");
-        root.getChildren().add(btn5);
+   //   Button btn5 = createButton("Planning Poker");
+ //     root.getChildren().add(btn5);
+        
+        Button planningPoker = new Button("Planning Poker");
+        planningPoker.setPrefSize(120, 40);
+        root.getChildren().add(planningPoker);
         
         Button btn6 = createButton("Contact Us");
         root.getChildren().add(btn6);
+        
+        
+        
+        planningPoker.setOnAction(event -> {
+			PlanningPoker poker = new PlanningPoker();
+			poker.start(new Stage());
+			primaryStage.close();
+			
+		});
         
         primaryStage.show();
     }
@@ -175,17 +188,17 @@ public class Dashboard1 extends Application {
             reportForm.setPadding(new Insets(10, 10, 10, 10)); // Uniform padding
             pane.setCenter(reportForm);
         }
-        if ("Planning Poker".equals(title)) {
-        	Text pokerHeader = new Text("Planning Poker");
-        	pokerHeader.setStyle("-fx-font-size: 24;");
-        	Text planningPoker = new Text(
-        			"Planning poker is a planning and estimation technique.\n"+
-        			"It is used by Agile teams after a product backlog creation.\n");
-        	
-        	VBox pokerDesc = new VBox(10, pokerHeader, planningPoker);
-        	pokerDesc.setPadding(new Insets(10, 10, 10, 10));
-        	pane.setCenter(pokerDesc);
-        }
+      //  if ("Planning Poker".equals(title)) {
+      //  	Text pokerHeader = new Text("Planning Poker");
+      //  	pokerHeader.setStyle("-fx-font-size: 24;");
+      //  	Text planningPoker = new Text(
+      //  			"Planning poker is a planning and estimation technique.\n"+
+      //  			"It is used by Agile teams after a product backlog creation.\n");
+      // 	
+      // 	VBox pokerDesc = new VBox(10, pokerHeader, planningPoker);
+      //  	pokerDesc.setPadding(new Insets(10, 10, 10, 10));
+      //  	pane.setCenter(pokerDesc);
+      //  }
         
         if ("Contact Us".equals(title)) {
             Text contactHeaderText = new Text("Contact Us");
@@ -198,7 +211,7 @@ public class Dashboard1 extends Application {
             Text addressHeader = new Text("Office Address:");
             addressHeader.setStyle("-fx-font-size: 24;");
             Text addressText = new Text(
-                "3828 Piermont Dr.\n" +
+                "308 Negra Arroya Lane\n" +
                 "Albuquerque, New Mexico\n" +
                 "United States"
             );
